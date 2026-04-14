@@ -25,8 +25,9 @@ test.describe('Playwright website', () => {
     await expect(nav.getByRole('link', { name: 'API' })).toBeVisible();
   });
 
-  test('has community link', async ({ page }) => {
-    await expect(page.getByRole('link', { name: 'Community' })).toBeVisible();
+  test('has MCP link', async ({ page }) => {
+    const nav = page.getByRole('navigation', { name: 'Main' });
+    await expect(nav.getByRole('link', { name: 'MCP' })).toBeVisible();
   });
 
   test('docs page loads', async ({ page }) => {
